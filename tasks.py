@@ -65,4 +65,5 @@ def date2():
 def date3():
     data = get_data_from_excel('date3')
     all_tue = [datetime.strptime(x, '%m-%d-%Y') for x in data if datetime.strptime(x, '%m-%d-%Y').isoweekday() == 2]
-    return len([x for x in all_tue if (x + timedelta(weeks=1)).month == x.month])
+    return len([x for x in all_tue if (x + timedelta(weeks=1)).month != x.month])
+
